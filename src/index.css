@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Base resets & custom animations */
+@layer base {
+  body {
+    background-color: #050505;
+    color: #f3f4f6;
+    font-family: var(--font-sans);
+  }
+}
+
+/* Custom overlay text animations */
+@keyframes captionBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+@keyframes captionGlitch {
+  0% { transform: translate(0) skew(0deg); text-shadow: 2px -2px #ef4444, -2px 2px #06b6d4; }
+  20% { transform: translate(-2px, 2px) skew(-3deg); }
+  40% { transform: translate(2px, -2px) skew(3deg); }
+  60% { transform: translate(-1px, -1px) skew(1deg); }
+  80% { transform: translate(1px, 2px) skew(-2deg); }
+  100% { transform: translate(0) skew(0deg); text-shadow: 2px -2px #ef4444, -2px 2px #06b6d4; }
+}
+
+.animate-caption-bounce {
+  animation: captionBounce 0.25s ease-out;
+}
+
+.animate-caption-glitch {
+  animation: captionGlitch 0.4s infinite linear;
+}
+
+/* Hide scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

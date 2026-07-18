@@ -1,0 +1,6 @@
+{
+  "name": "Clipper",
+  "description": "Platform pemotong video viral otomatis dengan analisis virality rating, template teks, dan pembuatan judul cerdas berbasis AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
